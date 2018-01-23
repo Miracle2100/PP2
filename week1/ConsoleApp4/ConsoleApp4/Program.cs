@@ -1,40 +1,58 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp4
+namespace circle
 {
-    using static Math;
-    class circle
+    class Circle
     {
-        double r, S, C, d;//radius , area , circumference , diameter
-        public circle()
+        public int radius;
+        public double area;
+        public int diametr;
+        public double length;
+
+
+        public Circle()
         {
-            Console.WriteLine("Radius :");
-            r = double.Parse(Console.ReadLine());
-            S = PI * r * r;
-            C = 2 * PI * r;
-            d = 2 * r;
+            radius = 2;
+        }
+        public Circle(int R)
+        {
+            radius = R;
+        }
+        public void findArea()
+        {
+            area = 3.14 * radius * radius;
+        }
+        public void findLength()
+        {
+            length = 2 * 3.14 * radius;
+        }
+        public void findDiametr()
+        {
+            diametr = 2 * radius;
         }
         public override string ToString()
         {
-            return "Area :" + S + "\n" + "Circumference :" + C + "\n" + "diameter :" + d;
+            return radius + "\n" + area + "\n" + length + "\n" + diametr;
         }
-
-
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-            circle Solution = new circle();
-            Console.WriteLine(Solution);
+            Circle s = new Circle(int.Parse(Console.ReadLine()));
+            s.findArea();
+            s.findLength();
+            s.findDiametr();
+
+            Console.WriteLine(s);
+
             Console.ReadKey();
+
         }
     }
 }
-
-

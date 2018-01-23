@@ -7,22 +7,45 @@ using System.Threading.Tasks;
 namespace ConsoleApp3
 {
     class Rectangle
+        
     {
-        int w, h, S, P;//width , height , area , perimetre
+        public int width;
+        public int height;
+        public int area;
+        public int perimeter;
+
+      
+
         public Rectangle()
         {
+            width = 3;
+            height = 2;
 
-            Console.WriteLine("Width :");
-            w = int.Parse(Console.ReadLine());//4 , 3
-            Console.WriteLine("Height:");
-            h = int.Parse(Console.ReadLine());//5 , 2
-            S = w * h;//20 , 6
-            P = 2 * (w + h);//18 , 10
+
         }
+        public Rectangle(int h, int w)
+        {
+            width = w;
+            height = h;
+                 
+        }
+        public void Area()
+        {
+
+
+            area = width * height;
+        }
+        public void Perimeter()
+        {
+
+
+            perimeter = 2 * (width + height);
+        }
+        
         public override string ToString()
         {
-            return "Area : " + S + " \n" + "Perimetre:" + P;
-        }
+            return "Area : " + area + " \n" + "Perimetre:" + perimeter;
+        }   
 
 
 
@@ -33,8 +56,12 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Rectangle Solution = new Rectangle();
-            Console.WriteLine(Solution);
+            int a = int.Parse(Console.ReadLine());//height
+            int b = int.Parse(Console.ReadLine());//width
+            Rectangle solution = new Rectangle(a, b);
+            solution.Area();
+            solution.Perimeter();
+            Console.WriteLine(solution);
             Console.ReadKey();
         }
     }

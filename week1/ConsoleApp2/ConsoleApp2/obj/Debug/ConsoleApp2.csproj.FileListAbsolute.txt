@@ -4,3 +4,9 @@ C:\Users\Аслан\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.p
 C:\Users\Аслан\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
 C:\Users\Аслан\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
 C:\Users\Аслан\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+C:\Users\Аслан\Desktop\PPII\week1\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\Аслан\Desktop\PPII\week1\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\Аслан\Desktop\PPII\week1\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+C:\Users\Аслан\Desktop\PPII\week1\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\Аслан\Desktop\PPII\week1\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\Аслан\Desktop\PPII\week1\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
