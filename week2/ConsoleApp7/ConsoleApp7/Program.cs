@@ -5,41 +5,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyStackExample
+namespace Lab2._3
 {
     class Program
     {
-
-        static void showStackTree(string path)
-        {
-            Stack<DirectoryInfo> myS = new Stack<DirectoryInfo>();
-            DirectoryInfo dir = new DirectoryInfo(path);
-            myS.Push(dir);
-
-            while (myS.Count > 0)
-            {
-                DirectoryInfo cur = myS.Pop();
-                foreach (DirectoryInfo d in cur.GetDirectories())
-                {
-                    Console.WriteLine(d.Name);
-                    myS.Push(d);
-                }
-
-                foreach (FileInfo f in cur.GetFiles())
-                {
-                    Console.WriteLine(f.Name);
-                }
-            }
-
-        }
-
-
         static void Main(string[] args)
         {
-            showStackTree(@"C:\test");
+            string path = Convert.ToString(Console.ReadLine());
 
-            
+            Stack<Dir> St = new Stack<Dir>();
 
+            St.Push(new Dir(path, 0, false));
+
+            while (St.Count > 0)
+            {
+                Dir cur = St.Pop();
+                Console.WriteLine(cur);
+
+                if (cur.flag == true) continue;
+
+                foreach (FileInfo i in new DirectoryInfo(cur.Path).GetFiles())
+                {
+                    St.Push(new Dir(i.FullName, cur.len + 5, true));
+                }
+                foreach (DirectoryInfo i in new DirectoryInfo(cur.Path).GetDirectories())
+                {
+                    St.Push(new Dir(i.FullName, cur.len + 5, false));
+                }
+
+            }
             Console.ReadKey();
         }
     }
