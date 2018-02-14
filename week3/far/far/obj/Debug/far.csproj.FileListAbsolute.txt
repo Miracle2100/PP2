@@ -1,7 +1,0 @@
-c:\users\аслан\source\repos\far\far\obj\Debug\far.csprojResolveAssemblyReference.cache
-c:\users\аслан\source\repos\far\far\obj\Debug\far.csproj.CoreCompileInputs.cache
-c:\users\аслан\source\repos\far\far\bin\Debug\far.exe.config
-c:\users\аслан\source\repos\far\far\bin\Debug\far.exe
-c:\users\аслан\source\repos\far\far\bin\Debug\far.pdb
-c:\users\аслан\source\repos\far\far\obj\Debug\far.exe
-c:\users\аслан\source\repos\far\far\obj\Debug\far.pdb
