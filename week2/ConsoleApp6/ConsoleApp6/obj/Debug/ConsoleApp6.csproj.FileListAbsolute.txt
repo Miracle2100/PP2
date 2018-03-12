@@ -5,3 +5,10 @@ C:\Users\Аслан\source\repos\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.c
 C:\Users\Аслан\source\repos\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csproj.CoreCompileInputs.cache
 C:\Users\Аслан\source\repos\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.exe
 C:\Users\Аслан\source\repos\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.pdb
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\bin\Debug\ConsoleApp6.exe.config
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\bin\Debug\ConsoleApp6.exe
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\bin\Debug\ConsoleApp6.pdb
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csprojResolveAssemblyReference.cache
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.csproj.CoreCompileInputs.cache
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.exe
+C:\Users\Аслан\Desktop\PPII\week2\ConsoleApp6\ConsoleApp6\obj\Debug\ConsoleApp6.pdb

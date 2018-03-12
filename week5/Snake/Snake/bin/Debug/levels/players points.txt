@@ -1,5 +1,0 @@
-USER:TTT and Score:0
-USER:Rusteem and Score:0
-USER:tt and Score:0
-USER:ыва and Score:1
-USER:аыв and Score:0

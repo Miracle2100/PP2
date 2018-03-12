@@ -10,15 +10,21 @@ namespace ConsoleApp6
     
     class Program
     {
-        static bool isPrime(int n)
-        {
-            for (int j = 2; j < Math.Sqrt(n); j++)
-            
-                if (n % j == 0)
+        public static bool IsPrime(double  f)
+        {  
+            for ( int i = 2; i <= Math.Sqrt(f); i++)
+            {
+                if (f % i == 0)
+                {
                     return false;
-                    return true; 
-            
+                   
+                }
+                return true;
+            }
+
         }
+
+        
         static void Main(string[] args)
         {
             FileStream f = new FileStream(@"C:\test\t.txt", FileMode.Open, FileAccess.Read);//45 11 7 57 84 100 5
@@ -29,14 +35,7 @@ namespace ConsoleApp6
             d.Close();
             string[] num = s.Split(' ');
             int min = int.Parse(num[0]);
-            for (int i = 0; i < num.Length; i++)
-            {
-
-                if (min > int.Parse(num[i]) && isPrime(int.Parse(num[i])))
-                    min = int.Parse(num[i]);
-               
-           
-            }
+            z
             Console.WriteLine($"min prime num = {min}");//5
            
             FileStream fds  = new FileStream(@"C:\test\t.txt", FileMode.Open, FileAccess.Write);

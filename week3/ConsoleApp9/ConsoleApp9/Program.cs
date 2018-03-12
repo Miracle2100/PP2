@@ -17,13 +17,14 @@ namespace SimpleFarManager
 
             for (int i = 0; i < infos.Length; i++)
             {
-
-                Console.BackgroundColor = i == pos ? ConsoleColor.White : ConsoleColor.Black;
-
-              
-                Console.ForegroundColor = infos[i].GetType() == typeof(DirectoryInfo) ? ConsoleColor.Magenta : ConsoleColor.Green;
-
+                if (i == pos)
+                    Console.BackgroundColor = ConsoleColor.White;
+                else
+                    Console.BackgroundColor = ConsoleColor.Black;
                 Console.WriteLine(infos[i].Name);
+           
+           
+                
             }
 
 
