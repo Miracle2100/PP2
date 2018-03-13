@@ -12,11 +12,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        double a, b;
+        double a, b,c;
         double s;
         int method;
         bool znak;
-
+        bool case1 = true, case2 = true, case3 = true, case4 = true, case5 = true, case6 = true, case7= true;
         public Form1()
         {
             InitializeComponent();
@@ -99,6 +99,7 @@ namespace WindowsFormsApp1
             label1.Text =  a.ToString()+ "-" ;
             znak = true;
 
+
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -106,9 +107,8 @@ namespace WindowsFormsApp1
             a = double.Parse(textBox1.Text);
             textBox1.Clear();
             method = 3;
-            label1.Text = a.ToString()+ "-" ;
+            label1.Text = a.ToString()+ "/" ;
             znak = true;
-
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace WindowsFormsApp1
             method = 1;
             label1.Text = a.ToString()+ "+"  ;
             znak = true;
-
+           
 
         }
 
@@ -176,6 +176,7 @@ namespace WindowsFormsApp1
         private void button19_Click(object sender, EventArgs e)
         {
               textBox1.Text +=  "," ;
+
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -342,32 +343,162 @@ namespace WindowsFormsApp1
 
 
                 case 1:
-                    b = a + double.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
+                    if (case1)
+                    {
+                        b = a + double.Parse(textBox1.Text);
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+                        
+                    }
+                   
+                    else if (!case1)
+                    {
+                        b = double.Parse(textBox1.Text) + c;
+                        textBox1.Text = b.ToString();
+                    }
+                    case1 = false;
+                    case2 = true;
+                    case3 = true;
+                    case4 = true;
+                    case5 = true;
+                    case6 = true;
+                    case7 = true;
                     break;
                 case 2:
-                    b = a - double.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
+                    if (case2)
+                    {
+                        b = a - double.Parse(textBox1.Text);
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+                    }
+                    else if(!case2)
+                    {
+                        b = double.Parse(textBox1.Text) - c;
+                        textBox1.Text = b.ToString();
+                    }
+                    case2 = false;
+                    case1 = true;
+                    case3 = true;
+                    case4 = true;
+                    case5 = true;
+                    case6 = true;
+                    case7 = true;
                     break;
                 case 3:
-                    b = a / double.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
+                    if (case3)
+                    {
+                        b = a / double.Parse(textBox1.Text);
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+
+                    }
+                     else if (!case3)
+                    {
+                        b = double.Parse(textBox1.Text) / c;
+                        textBox1.Text = b.ToString();
+                    }
+                    case3 = false;
+                    case1 = true;
+                    case2 = true;
+                    case4 = true;
+                    case5 = true;
+                    case6 = true;
+                    case7 = true;
                     break;
                 case 4:
-                    b = a * double.Parse(textBox1.Text);
-                    textBox1.Text = b.ToString();
+                    if (case4)
+                    {
+                        b = a * double.Parse(textBox1.Text);
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+
+                    }
+                        else if (!case4)
+                    {
+                        b = double.Parse(textBox1.Text) * c;
+                        textBox1.Text = b.ToString();
+                    }
+                    case4 = false;
+                    case3 = true;
+                    case1 = true;
+                    case2 = true;
+                    case5 = true;
+                    case6 = true;
+                    case7 = true;
                     break;
                 case 5:
-                    b = Math.Pow(a, double.Parse(textBox1.Text));
-                    textBox1.Text = b.ToString();
+                   
+                    if (case5)
+                    {
+                        b = Math.Pow(a, double.Parse(textBox1.Text));
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+
+                    }
+
+                    else if (!case5)
+                    {
+                        b = Math.Pow(double.Parse(textBox1.Text), c);
+                        textBox1.Text = b.ToString();
+                    }
+                    case5 = false;
+                    case4 = true;
+                    case3 = true;
+                    case1 = true;
+                    case2 = true;
+                    case6 = true;
+                    case7 = true;
+
                     break;
                 case 6:
-                    b = Math.Pow(a, 1/double.Parse(textBox1.Text));
-                    textBox1.Text = b.ToString();
+                   
+                    if (case6)
+                    {
+                        b = Math.Pow(a, 1 / double.Parse(textBox1.Text));
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+
+                    }
+
+                    else if (!case6)
+                    {
+                        b = Math.Pow(double.Parse(textBox1.Text), 1 / c);
+                       
+                        textBox1.Text = b.ToString();
+                    }
+                    case6 = false;
+                    case5 = true;
+                    case4 = true;
+                    case3 = true;
+                    case1 = true;
+                    case2 = true;
+                    case7 = true;
+
                     break;
                 case 7:
                     b = a % double.Parse(textBox1.Text);
+                    c = double.Parse(textBox1.Text);
                     textBox1.Text = b.ToString();
+                    if (case7)
+                    {
+                        b = a % double.Parse(textBox1.Text);
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = b.ToString();
+
+                    }
+
+                    else if (!case7)
+                    {
+                        b = double.Parse(textBox1.Text) % c;
+                        textBox1.Text = b.ToString();
+                    }
+                    case7 = false;
+                    case6 = true;
+                    case5 = true;
+                    case4 = true;
+                    case3 = true;
+                    case1 = true;
+                    case2 = true;
                     break;
                 default:
                 break;
