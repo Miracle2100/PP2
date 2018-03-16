@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            textBox1.Text = "0";
         }
         private double factorial(double n)
         {
@@ -28,64 +29,11 @@ namespace WindowsFormsApp1
                 return 1;
             else return n * factorial(n - 1);
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 1;
-
-        }
-
+     
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 2;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 3;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 4;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 5;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 6;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 7;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 8;
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 9;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += 0;
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -98,6 +46,7 @@ namespace WindowsFormsApp1
             method = 2;
             label1.Text =  a.ToString()+ "-" ;
             znak = true;
+            textBox1.Text = "0";
 
 
         }
@@ -109,6 +58,7 @@ namespace WindowsFormsApp1
             method = 3;
             label1.Text = a.ToString()+ "/" ;
             znak = true;
+            textBox1.Text = "0";
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -118,6 +68,7 @@ namespace WindowsFormsApp1
             method = 4;
             label1.Text = a.ToString() + "*"  ;
             znak = true;
+            textBox1.Text = "0";
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -127,19 +78,19 @@ namespace WindowsFormsApp1
         }
 
         private void button10_Click(object sender, EventArgs e)
-        {
+        {  
             a = double.Parse(textBox1.Text);
             textBox1.Clear();
             method = 1;
             label1.Text = a.ToString()+ "+"  ;
             znak = true;
-           
+            textBox1.Text= "0";
 
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            textBox1.Text = "0";
             label1.Text = "";
         }
 
@@ -152,6 +103,8 @@ namespace WindowsFormsApp1
             {
                 textBox1.Text = textBox1.Text + text[i];
             }
+            if (textBox1.Text == "")
+                textBox1.Text = "0";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -160,13 +113,13 @@ namespace WindowsFormsApp1
         }
 
         private void button18_Click(object sender, EventArgs e)
-        {
-            if (znak == true)
+        {  
+            if (znak == true && textBox1.Text !="0")
             {
                 textBox1.Text = "-" + textBox1.Text;
                 znak = false;
             }
-            else if (znak == false)
+            else if (znak == false && textBox1.Text != "0")
             {
                 textBox1.Text = textBox1.Text.Replace("-", "");
                 znak = true;
@@ -190,6 +143,7 @@ namespace WindowsFormsApp1
             a = double.Parse(textBox1.Text) * double.Parse(textBox1.Text);
 
             textBox1.Text = a.ToString();
+
         }
 
         private void button22_Click(object sender, EventArgs e)
@@ -200,6 +154,7 @@ namespace WindowsFormsApp1
             method = 5;
             label1.Text = a.ToString() + "^y";
             znak = true;
+            textBox1.Text = "0";
 
         }
 
@@ -210,6 +165,7 @@ namespace WindowsFormsApp1
             method = 6;
             label1.Text = a.ToString() + "^(1/y)";
             znak = true;
+            textBox1.Text = "0";
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -263,6 +219,17 @@ namespace WindowsFormsApp1
 
         }
 
+        private void numbers(object sender, EventArgs e)
+        {    Button btn = sender as Button;
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+            }
+            textBox1.Text += double.Parse(btn.Text);
+            znak = true;
+
+        }
+
         private void button33_Click(object sender, EventArgs e)
         {
             s = 0;
@@ -278,13 +245,12 @@ namespace WindowsFormsApp1
         private void button35_Click(object sender, EventArgs e)
         {   if (radioButton1.Checked)
             {
-                a = Math.Sin(double.Parse(textBox1.Text));
-
+                a = Math.Sin(Math.PI * double.Parse(textBox1.Text) / 180);
                 textBox1.Text = a.ToString();
             }
             else if (radioButton2.Checked)
             {
-                a = Math.Asin(double.Parse(textBox1.Text));
+                a = Math.Sin(double.Parse(textBox1.Text));
                 textBox1.Text = a.ToString();
             }
             else textBox1.Text = "";
@@ -294,12 +260,12 @@ namespace WindowsFormsApp1
         {
             if (radioButton1.Checked)
             {
-                a = Math.Cos(double.Parse(textBox1.Text));
+                a = Math.Cos(Math.PI * double.Parse(textBox1.Text) / 180);
                 textBox1.Text = a.ToString();
             }
             else if (radioButton2.Checked)
             {
-                a = Math.Acos(double.Parse(textBox1.Text));
+                a = Math.Cos(double.Parse(textBox1.Text));
                 textBox1.Text = a.ToString();
             }
             
@@ -310,12 +276,12 @@ namespace WindowsFormsApp1
         {
             if (radioButton1.Checked)
             {
-                a = Math.Tan(double.Parse(textBox1.Text));
+                a = Math.Tan(Math.PI * double.Parse(textBox1.Text)/ 180);
                 textBox1.Text = a.ToString();
             }
             else if( radioButton2.Checked)
             {
-                a = Math.Atan(double.Parse(textBox1.Text));
+                a = Math.Tan(double.Parse(textBox1.Text));
                 textBox1.Text = a.ToString();
             }
             else textBox1.Text = "";
