@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         int method;
         bool znak;
         bool case1 = true, case2 = true, case3 = true, case4 = true, case5 = true, case6 = true, case7= true;
+        bool case11 = true;
         public Form1()
         {
             InitializeComponent();
@@ -41,34 +42,67 @@ namespace WindowsFormsApp1
 
         private void button12_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 2;
-            label1.Text =  a.ToString()+ "-" ;
-            znak = true;
-            textBox1.Text = "0";
 
+            if (double.Parse(textBox1.Text)> 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 2;
+
+                label1.Text = a.ToString() + "-";
+                znak = true;
+                textBox1.Text = "0";
+            }
+            else
+            {
+               
+                method = 2;
+
+                label1.Text = a.ToString() + "-";
+                znak = true;
+              
+            }
 
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 3;
-            label1.Text = a.ToString()+ "/" ;
-            znak = true;
-            textBox1.Text = "0";
+            if (double.Parse(textBox1.Text) > 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 3;
+                label1.Text = a.ToString() + "/";
+                znak = true;
+                textBox1.Text = "0";
+            }
+            else
+            {
+                method = 3;
+                label1.Text = a.ToString() + "/";
+                znak = true;
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 4;
-            label1.Text = a.ToString() + "*"  ;
-            znak = true;
-            textBox1.Text = "0";
+            if (double.Parse(textBox1.Text) > 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 4;
+                label1.Text = a.ToString() + "*";
+                znak = true;
+                textBox1.Text = "0";
+            }
+            else
+            {
+                method = 4;
+                label1.Text = a.ToString() + "*";
+                znak = true;
+
+            }
+            
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -78,13 +112,25 @@ namespace WindowsFormsApp1
         }
 
         private void button10_Click(object sender, EventArgs e)
-        {  
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 1;
-            label1.Text = a.ToString()+ "+"  ;
-            znak = true;
-            textBox1.Text= "0";
+        {
+            if (double.Parse(textBox1.Text) > 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 1;
+                label1.Text = a.ToString() + "+";
+                znak = true;
+                textBox1.Text = "0";
+            }
+        else
+            {
+              
+                method = 1;
+                label1.Text = a.ToString() + "+";
+                znak = true;
+             
+
+            }
 
         }
 
@@ -148,24 +194,42 @@ namespace WindowsFormsApp1
 
         private void button22_Click(object sender, EventArgs e)
         {
-            
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 5;
-            label1.Text = a.ToString() + "^y";
-            znak = true;
-            textBox1.Text = "0";
+            if (double.Parse(textBox1.Text) > 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 5;
+                label1.Text = a.ToString() + "^y";
+                znak = true;
+                textBox1.Text = "0";
+            }
+            else
+            {
+                method = 5;
+                label1.Text = a.ToString() + "^y";
+                znak = true;
+            }
 
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 6;
-            label1.Text = a.ToString() + "^(1/y)";
-            znak = true;
-            textBox1.Text = "0";
+
+            if (double.Parse(textBox1.Text) > 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 6;
+                label1.Text = a.ToString() + "^(1/y)";
+                znak = true;
+                textBox1.Text = "0";
+            }
+            else
+            {
+                method = 6;
+                label1.Text = a.ToString() + "^(1/y)";
+                znak = true;
+            }
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -288,12 +352,20 @@ namespace WindowsFormsApp1
         }
 
         private void button34_Click(object sender, EventArgs e)
-        {
-            a = double.Parse(textBox1.Text);
-            textBox1.Clear();
-            method = 7;
-            label1.Text = a.ToString() + "%";
-            znak = true;
+        {if (double.Parse(textBox1.Text) > 0)
+            {
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 7;
+                label1.Text = a.ToString() + "%";
+                znak = true;
+            }
+        else
+            {
+                method = 7;
+                label1.Text = a.ToString() + "%";
+                znak = true;
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
