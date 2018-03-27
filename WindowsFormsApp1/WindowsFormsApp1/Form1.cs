@@ -17,7 +17,6 @@ namespace WindowsFormsApp1
         int method;
         bool znak;
         bool case1 = true, case2 = true, case3 = true, case4 = true, case5 = true, case6 = true, case7= true;
-        bool case11 = true;
         public Form1()
         {
             InitializeComponent();
@@ -136,8 +135,19 @@ namespace WindowsFormsApp1
 
         private void button16_Click(object sender, EventArgs e)
         {
+            a = 0;
+            b = 0;
+            c = 0;
             textBox1.Text = "0";
             label1.Text = "";
+            case1 = true;
+            case2 = true;
+            case3 = true;
+            case4 = true;
+            case5 = true;
+            case5 = true;
+            case6 = true;
+            case7 = true;
         }
 
         private void button17_Click(object sender, EventArgs e)
