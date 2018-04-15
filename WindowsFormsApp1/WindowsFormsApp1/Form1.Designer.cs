@@ -86,7 +86,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(227, 101);
+            this.textBox1.Location = new System.Drawing.Point(228, 101);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";

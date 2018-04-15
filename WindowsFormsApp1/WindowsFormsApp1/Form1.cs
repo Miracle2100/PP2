@@ -12,11 +12,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        double a, b,c;
+        double a, b,c,g,e;
         double s;
         int method;
         bool znak;
-        bool case1 = true, case2 = true, case3 = true, case4 = true, case5 = true, case6 = true, case7= true;
+        bool case1 = true, case2 = true, case3 = true, case4 = true, case5 = true, case6 = true, case7 = true, t = true;
         public Form1()
         {
             InitializeComponent();
@@ -42,26 +42,40 @@ namespace WindowsFormsApp1
         private void button12_Click(object sender, EventArgs e)
         {
 
-            if (double.Parse(textBox1.Text)> 0)
+
+            if (double.Parse(textBox1.Text) != 0 && t)
             {
+
+
+                case1 = true;
                 a = double.Parse(textBox1.Text);
+                g = a;
                 textBox1.Clear();
                 method = 2;
-
                 label1.Text = a.ToString() + "-";
                 znak = true;
                 textBox1.Text = "0";
-            }
-            else
-            {
-               
-                method = 2;
+                t = false;
 
+            }
+            else if (double.Parse(textBox1.Text) != 0 && !t)
+            {
+                a -= double.Parse(textBox1.Text);
+                label1.Text = a.ToString() + "-";
+                textBox1.Text = "0";
+
+            }
+
+            else if (textBox1.Text == "0")
+            {
+
+                method = 1;
                 label1.Text = a.ToString() + "-";
                 znak = true;
-              
-            }
+                t = true;
 
+
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -112,28 +126,29 @@ namespace WindowsFormsApp1
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (double.Parse(textBox1.Text) > 0)
-            {
-                a = double.Parse(textBox1.Text);
-                textBox1.Clear();
-                method = 1;
-                label1.Text = a.ToString() + "+";
-                znak = true;
-                textBox1.Text = "0";
-            }
-        else
-            {
-              
-                method = 1;
-                label1.Text = a.ToString() + "+";
-                znak = true;
-             
 
-            }
 
+                if (double.Parse(textBox1.Text) != 0)
+                {
+                    a = double.Parse(textBox1.Text);
+                    textBox1.Clear();
+                    method = 1;
+                    label1.Text = a.ToString() + "+";
+                    znak = true;
+                    textBox1.Text = "0";
+                }
+                else
+                {
+                    method = 5;
+                    label1.Text = a.ToString() + "+";
+                    znak = true;
+                }
+
+
+            
         }
 
-        private void button16_Click(object sender, EventArgs e)
+            private void button16_Click(object sender, EventArgs e)
         {
             a = 0;
             b = 0;
@@ -141,13 +156,7 @@ namespace WindowsFormsApp1
             textBox1.Text = "0";
             label1.Text = "";
             case1 = true;
-            case2 = true;
-            case3 = true;
-            case4 = true;
-            case5 = true;
-            case5 = true;
-            case6 = true;
-            case7 = true;
+            
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -169,21 +178,27 @@ namespace WindowsFormsApp1
         }
 
         private void button18_Click(object sender, EventArgs e)
-        {  
-            if (znak == true && textBox1.Text !="0")
+        {
+            if (double.Parse(textBox1.Text) != 0)
             {
-                textBox1.Text = "-" + textBox1.Text;
-                znak = false;
+                a = double.Parse(textBox1.Text);
+                textBox1.Clear();
+                method = 2;
+                label1.Text = a.ToString() + "-";
+                znak = true;
+                textBox1.Text = "0";
             }
-            else if (znak == false && textBox1.Text != "0")
+            else
             {
-                textBox1.Text = textBox1.Text.Replace("-", "");
+                method = 5;
+                label1.Text = a.ToString() + "-";
                 znak = true;
             }
+
         }
 
         private void button19_Click(object sender, EventArgs e)
-        {
+        {  if ( !textBox1.Text.Contains(','))
               textBox1.Text +=  "," ;
 
         }
@@ -204,7 +219,7 @@ namespace WindowsFormsApp1
 
         private void button22_Click(object sender, EventArgs e)
         {
-            if (double.Parse(textBox1.Text) > 0)
+            if (double.Parse(textBox1.Text)!= 0)
             {
                 a = double.Parse(textBox1.Text);
                 textBox1.Clear();
@@ -225,7 +240,7 @@ namespace WindowsFormsApp1
         private void button23_Click(object sender, EventArgs e)
         {
 
-            if (double.Parse(textBox1.Text) > 0)
+            if (double.Parse(textBox1.Text)!= 0)
             {
                 a = double.Parse(textBox1.Text);
                 textBox1.Clear();
@@ -393,40 +408,47 @@ namespace WindowsFormsApp1
                 case 1:
                     if (case1)
                     {
-                        b = a + double.Parse(textBox1.Text);
-                        c = double.Parse(textBox1.Text);
-                        textBox1.Text = b.ToString();
                         
+                        g =  a + double.Parse(textBox1.Text);
+                        c = double.Parse(textBox1.Text);
+                        textBox1.Text = g.ToString();
+                        case1 = false;
                     }
-                   
+
+
                     else if (!case1)
                     {
                         b = double.Parse(textBox1.Text) + c;
                         textBox1.Text = b.ToString();
                     }
+                    case3 = true;
                     case1 = false;
                     case2 = true;
-                    case3 = true;
                     case4 = true;
                     case5 = true;
                     case6 = true;
                     case7 = true;
+
                     break;
                 case 2:
                     if (case2)
                     {
-                        b = a - double.Parse(textBox1.Text);
+
+                        g = a - double.Parse(textBox1.Text);
                         c = double.Parse(textBox1.Text);
-                        textBox1.Text = b.ToString();
+                        textBox1.Text = g.ToString();
+                        case1 = false;
                     }
-                    else if(!case2)
+
+
+                    else if (!case2)
                     {
                         b = double.Parse(textBox1.Text) - c;
                         textBox1.Text = b.ToString();
                     }
-                    case2 = false;
-                    case1 = true;
                     case3 = true;
+                    case1 = true;
+                    case2 = false;
                     case4 = true;
                     case5 = true;
                     case6 = true;
