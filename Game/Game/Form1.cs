@@ -13,6 +13,7 @@ namespace Game
 {
     public partial class Form1 : Form
     {
+        List<Point> Bullets = new List<Point>();
         Brush pobr  = Brushes.White;
         Pen pobrpen = new Pen(Color.White, 4);
         Pen p = new Pen(Color.White, 5);
@@ -41,14 +42,16 @@ namespace Game
         PictureBox[] asteroid = new PictureBox[10];
         Bitmap btm1 = new Bitmap("spaceship.png");
         Bitmap[] btmasteroid = new Bitmap[10];
- 
-     
+        Bitmap btm2 = new Bitmap("laser.png");
+        PictureBox laser;
+        bool gameover = false;
         Random rnd = new Random();
         Label[] labelArray = new Label[10];
         int[] dx = new int[] { 2, 3, 3, 2, 2 ,3,2,1,2,3}, dy = new int[] { 2, 3, 2, 3, 3 ,3,2,2,2,2};
         Rectangle image1;
         Rectangle image2;
-       
+        Rectangle image3;
+        Rectangle image4;
         Pen pen = new Pen(Color.White, 7);
         double dyy = 8, dxx = 8;
 
@@ -58,7 +61,12 @@ namespace Game
             poly[0].ScaleTransform( .2F, .2F);
             poly[0].DrawPolygon(pobrpen, arr1);
             poly[0].FillPolygon(pobr, arr1);
-        
+            for (int i = 0; i < Bullets.Count; ++i)
+            {
+             
+                e.Graphics.FillEllipse(new SolidBrush(Color.Blue), new Rectangle(Bullets[i], new Size(20, 20)));
+              
+            }
         }
 
         public Form1()
@@ -128,7 +136,7 @@ namespace Game
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            
             label1.ForeColor = Color.Green;
             label1.Text = pb.Location.X + "; " + pb.Location.Y;
             if (e.KeyCode == Keys.Up)
@@ -147,10 +155,35 @@ namespace Game
             {
                 pb.Location = new Point(pb.Location.X + (int)dxx, pb.Location.Y);
             }
+            if ( e.KeyCode == Keys.Enter)
+            {
+                Bullets.Add(new Point(pb.Location.X + pb.Width / 2 - 10, pb.Location.Y));
+                SoundPlayer laser = new SoundPlayer("st.wav");
+                laser.Play();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {  if (pobr == Brushes.White && pobrpen == Pens.White)
+        {
+            if (gameover)
+                return;
+            for (int i = 0; i < Bullets.Count; ++i)
+            {
+                Bullets[i] = new Point(Bullets[i].X, Bullets[i].Y - 20);
+                laser = new PictureBox();
+                laser.Location = new Point(Bullets[i].X, Bullets[i].Y);
+               
+
+
+
+            }
+
+            while (Bullets.Count > 0 && Bullets[0].Y < 0) { Bullets.RemoveAt(0);
+           }
+            Refresh();
+
+
+            if (pobr == Brushes.White && pobrpen == Pens.White)
             {
                 pobr = Brushes.Black;
                 pobrpen = Pens.Black;
@@ -162,9 +195,9 @@ namespace Game
                 pobrpen = Pens.White;
             }
             Refresh();
-                for ( int i = 0; i < 10;i++)
+            for (int i = 0; i < 10; i++)
             {
-               
+
                 labelArray[i].Location = new Point(labelArray[i].Location.X + dx[i], labelArray[i].Location.Y + dy[i]);
                 asteroid[i].Location = labelArray[i].Location;
                 asteroid[i].SizeMode = PictureBoxSizeMode.StretchImage;
@@ -178,11 +211,15 @@ namespace Game
                     asteroid[i].SizeMode = PictureBoxSizeMode.StretchImage;
 
                 }
-                for( int j = 0;  j < 10; j++)
+
+                for (int j = 0; j < 10; j++)
                 {
+
                     image1 = new Rectangle(labelArray[i].Location.X, labelArray[i].Location.Y, 48, 55);
                     image2 = new Rectangle(labelArray[j].Location.X, labelArray[j].Location.Y, 48, 55);
-                    if (image1.IntersectsWith(image2) && i != j )
+                    image4 = new Rectangle(pb.Location.X, pb.Location.Y, pb.Width, pb.Height);
+
+                    if (image1.IntersectsWith(image2) && i != j)
 
                     {
                         dx[i] *= -1;
@@ -191,7 +228,35 @@ namespace Game
                         asteroid[i].SizeMode = PictureBoxSizeMode.StretchImage;
 
                     }
-                   
+                    if (image4.IntersectsWith(image1) || image4.IntersectsWith(image2))
+                    {
+                        gameover = true;
+                        MessageBox.Show("Game Over");
+                        break;
+                    }
+                    for (int q = 0; q < Bullets.Count; ++q)
+                    {
+                      
+                        image3 = new Rectangle(Bullets[q], new Size(20, 20));
+                        if (image3.IntersectsWith(image1))
+                        {
+
+                            labelArray[i].Location = new Point(rnd.Next(0, 500), -5);
+                            dx[i] = rnd.Next(1, 5);
+                            dy[i] = rnd.Next(1, 5);
+
+                        }
+                        if (image3.IntersectsWith(image2))
+                        {
+
+                            labelArray[j].Location = new Point(rnd.Next(0, 500), -5);
+                            dx[j] = rnd.Next(1, 5);
+                            dy[j] = rnd.Next(1, 5);
+                        }
+                       
+                    }
+
+
                 }
             }
 
